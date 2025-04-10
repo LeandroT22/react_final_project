@@ -234,6 +234,7 @@ const alreadyInCart = (itemName) => {
         justifyContent: 'space-between',
         alignItems: 'center',
         width: '1100px',
+        
     }
     const styleA = {
         color: 'white',
@@ -252,8 +253,7 @@ const alreadyInCart = (itemName) => {
     };
     const handlePlantsClick = (e) => {
         e.preventDefault();
-        setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
-        setShowCart(false); // Hide the cart when navigating to About Us
+        setShowCart(false);
     };
 
     const handleContinueShopping = (e) => {
@@ -284,15 +284,15 @@ const alreadyInCart = (itemName) => {
                         <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
                         <a href="/" onClick={(e) => handleHomeClick(e)}>
                             <div>
-                                <h3 style={{ color: 'white' }}>Paradise Nursery</h3>
-                                <i style={{ color: 'white' }}>Where Green Meets Serenity</i>
+                                <h3 style={{ color: 'white', marginLeft: '20px'}}>Paradise Nursery</h3>
+                                <i style={{ color: 'white', marginLeft: '20px'}}>Where Green Meets Serenity</i>
                             </div>
                         </a>
                     </div>
 
                 </div>
                 <div style={styleObjUl}>
-                    <div> <a href="#" onClick={(e) => handlePlantsClick(e)} style={styleA}>Plants</a></div>
+                    <div style={{marginLeft: '110px', fontWeight: '800'}}> <a href="#" onClick={(e) => handlePlantsClick(e)} style={styleA}>Plants</a></div>
                     <div>
   <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
     <div style={{ position: 'relative' }}>
@@ -330,12 +330,13 @@ const alreadyInCart = (itemName) => {
                 <div className="product-grid">
     {plantsArray.map((category, index) => (
     <div key={index}>
-        <h1><div>{category.category}</div></h1>
+        <h1 style={{textAlign:'center', padding: '15px' }}><div>{category.category}</div></h1>
         <div className="product-list">
             {category.plants.map((plant, plantIndex) => (
             <div className="product-card" key={plantIndex}>
-                <img className="product-image" src={plant.image} alt={plant.name} />
                 <div className="product-title">{plant.name}</div>
+                <img className="product-image" src={plant.image} alt={plant.name} />
+                <div className="product-text" style={{padding: '15px' }}>{plant.description}</div>
                 {/*Similarly like the above plant.name show other details like description and cost*/}
                 <button
   className="product-button"
