@@ -221,7 +221,7 @@ const alreadyInCart = (itemName) => {
         }
     ];
     const styleObj = {
-        backgroundColor: '#4CAF50',
+        backgroundColor: 'orange',
         color: '#fff!important',
         padding: '15px',
         display: 'flex',
@@ -284,8 +284,8 @@ const alreadyInCart = (itemName) => {
                         <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
                         <a href="/" onClick={(e) => handleHomeClick(e)}>
                             <div>
-                                <h3 style={{ color: 'white', marginLeft: '20px'}}>Paradise Nursery</h3>
-                                <i style={{ color: 'white', marginLeft: '20px'}}>Where Green Meets Serenity</i>
+                                <h3 style={{ color: 'white', marginLeft: '20px'}}>GreenRoots</h3>
+                                <i style={{ color: 'white', marginLeft: '20px'}}>a greener life!</i>
                             </div>
                         </a>
                     </div>
@@ -341,7 +341,7 @@ const alreadyInCart = (itemName) => {
                 <button
   className="product-button"
   style={{
-    backgroundColor: alreadyInCart(plant.name) ? "gray" : "#4CAF50",
+    backgroundColor: alreadyInCart(plant.name) ? "gray" : "orange",
     cursor: alreadyInCart(plant.name) ? "not-allowed" : "pointer",
   }}
   onClick={() => handleAddToCart(plant)}
